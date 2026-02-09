@@ -1,45 +1,108 @@
-# Storm
-Prediction of Storm tracks using hybrid model
+# Machine Learning-Based Characterization of Compound Atmospheric Extreme Events
+
+## 📌 Overview
+
+This repository contains the implementation and documentation of a machine
+learning framework for detecting and characterizing compound atmospheric extreme
+events using multivariate severity indexing, uncertainty quantification, and
+explainability analysis.
+
+The project integrates statistical methods and modern machine learning techniques
+to analyze extreme weather patterns and identify high-risk atmospheric regimes.
+It supports interpretable and uncertainty-aware climate risk assessment.
+
+This work forms the basis of a journal submission in the field of climate data
+analysis and environmental informatics.
+
+---
+
+## 🎯 Objectives
+
+- Construct a multivariate Extreme Weather Severity Index (EWSI)
+- Detect extreme and compound atmospheric events
+- Classify extreme regimes using Random Forest
+- Visualize climatic regimes using UMAP and t-SNE
+- Quantify prediction uncertainty using entropy
+- Interpret model predictions using SHAP analysis
+- Provide physically meaningful explanations of extreme events
 
 
- Objective: 
- 
-The primary objective of this project is to leverage machine learning algorithms to predict the trajectories of storms. Accurate storm forecasting is essential due to the significant impact storms have on human lives and property.
+---
 
- Data Collection: 
- 
-The data for this project was sourced from the India Meteorological Department (IMD) in Pune. The dataset included various meteorological features such as date, highest and lowest temperatures, surface pressure, dew point temperature, and relative humidity.
+## 📊 Dataset
 
- Methodology: 
- 
-1.	Data Pre-Processing: 
-Essential pre-processing steps were applied to clean and prepare the data for analysis.
+The dataset consists of long-term meteorological observations, including:
 
-3.	Learning Models:  
-Multiple machine learning models were employed, including:
-	Support Vector Machine (SVM)
-	Random Forest Regressor
-	Recurrent Neural Network (RNN)
-	Decision Tree Regressor
-	Ensemble Model (Voting Regressor)
-	Hybrid Model
+- Wind Speed
+- Surface Pressure
+- Rainfall
 
-4.  Hybrid Model Development:
-   The hybrid model combined the best features of the individual models to enhance prediction accuracy. The hybrid model is the combination of Kriging model and Random forest which is a combination of surrogate model with machine learning model to obtain more accurate result.
+Data preprocessing includes:
 
-5. Results: 
- 
-The performance of the models was evaluated using mean squared error (MSE) and R-squared values:
-- The hybrid model achieved the lowest MSE of 0.46, indicating superior prediction accuracy.
-- The hybrid model also recorded the highest R-squared value of 0.95, explaining 95% of the variance in the data.
-- The random forest regressor and ensemble model also performed well, with R-squared values of 0.80 and 0.74, respectively.
+- Quality control
+- Missing value handling
+- Forward filling
+- Percentile-based normalization
+- Feature scaling
 
-6. Conclusion:
+Due to data licensing and privacy policies, the raw dataset is not publicly shared
+in this repository.
 
-The hybrid model emerged as the top performer, demonstrating the ability to accurately capture underlying patterns in the data and generate precise forecasts. The project highlights the effectiveness of hybrid models and ensemble approaches in improving prediction accuracy for storm trajectories.
+---
 
-7. Significance:
-   
-This project showcases the application of advanced machine learning techniques in meteorological forecasting, emphasizing the importance of integrating multiple models to achieve high predictive accuracy. The findings are crucial for disaster management and preparedness, potentially saving lives and reducing property damage.
+## ⚙️ Methodology
+
+### 1. Preprocessing
+- Outlier detection
+- Normalization
+- Temporal alignment
+
+### 2. Severity Index (EWSI)
+- Percentile-based normalization
+- Linear aggregation of variables
+- Threshold-based extreme detection
+
+### 3. Feature Engineering
+- Lagged variables
+- Derived physical features
+- Correlation filtering
+
+### 4. Classification
+- Random Forest ensemble
+- Balanced class weights
+- Hyperparameter tuning
+
+### 5. Visualization
+- UMAP
+- t-SNE
+- Regime clustering
+
+### 6. Uncertainty Analysis
+- Entropy-based uncertainty
+- Probability distributions
+
+### 7. Explainability
+- SHAP feature importance
+- SHAP interaction analysis
+
+---
+
+## 🛠️ Requirements
+
+Recommended environment:
+
+- Python 3.8+
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- SHAP
+- UMAP-learn
+
+Install dependencies using:
+
+```bash
+pip install -r requirements.txt
 
 
